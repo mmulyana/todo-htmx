@@ -1,0 +1,11 @@
+<% todos.forEach((todo) => { %>
+
+<div class="todo">
+  <h2><%= todo.name %></h2>
+  <h3 hx-put="/todo/<%= todo.id %>" hx-target="#main-display">
+    <%= todo.isDone ? "completed" : "not completed" %>
+  </h3>
+  <h3 hx-delete="/todo/<%= todo.id %>" hx-target="#main-display">X</h3>
+</div>
+
+<% }) %>
